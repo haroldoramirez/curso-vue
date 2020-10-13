@@ -1,0 +1,27 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ titulo }}</p>
+    <p>{{ saudacao() }}</p>
+    <a v-bind:href="link">Google</a>
+</div>
+
+<script>
+    //Apartir do this voce consegue acessar variáveis e funcoes
+    //Nao é possível usar a variável com o mesmo nome do método, porque os métodos ficam na raiz do Vue
+    //Diretivas v-bind -> Ligação entre o dado com a view com um atribudo propriedade da tag
+    //Diretivas são propriedades personalisadas são interpretadas pelo Vue. Podemos criar nossas proprias e umas que o vue tem.
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS!',
+            link: 'https://google.com'
+        },
+        methods: {
+            saudacao: function () {
+                console.log(this);
+                return this.titulo;
+            }
+        }
+    })
+</script>

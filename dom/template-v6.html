@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p v-once>{{ titulo }}</p>
+    <p>{{ saudacao() }}</p>
+    <a v-bind:href="link">Google</a>
+    <hr>
+    <p v-html="linkHtml">Link Google</p>
+</div>
+
+<script>
+    //v-once economiza recursos, um trecho do HTMl que não precisa ser atualizado constantemente
+    //O vue não atualiza mas as informações da tag onde tem v-once
+    //Interpretar um HTML
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS!',
+            link: 'https://google.com',
+            linkHtml: '<a href="https://google.com">Google</a>'
+        },
+        methods: {
+            saudacao: function () {
+                this.titulo = 'Bom dia !!';
+                return this.titulo;
+            }
+        }
+    })
+</script>

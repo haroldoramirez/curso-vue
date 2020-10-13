@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ titulo }}</p>
+    <p>{{ saudacao() }}</p>
+</div>
+
+<script>
+    //O vue é o intermediáriop entre o template.
+    //ponte Vue faz a ponta do foi escrito no trecho html.
+    //O vue guarda o template na memória
+    //O vue proporciona acesso direto.
+    //Retornado como string sempre nos {{}}
+    //Tudo aquilo que você joga no HTML precisa ser passível para string se não ocorre erros. Ou alguma forma que seja convertido pra string
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS!'
+        },
+        methods: {
+            saudacao: function () {
+                return 'Boa semana!';
+            }
+        }
+    })
+</script>
